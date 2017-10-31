@@ -9,26 +9,6 @@
   <mat-sidenav #sidenav mode="side" opened="true">
     <app-nav></app-nav>
   </mat-sidenav>
-  <mat-card>
-    <button mat-raised-button appMyDirective>
-      lkssjdaslkdj
-    </button>
-    <mat-input-container>
-      <input
-        matInput
-        placeholder="Login"
-        required
-        [(ngModel)]="username"
-        #userName="ngModel"
-        (ngModelChange)="changes($event)">
-    </mat-input-container>
-    <button
-      mat-raised-button
-      color="primary"
-      [disabled]="userName.invalid">
-      принять
-    </button>
-    <router-outlet></router-outlet>
-  </mat-card>
+  <router-outlet></router-outlet>
 </mat-sidenav-container>
 
