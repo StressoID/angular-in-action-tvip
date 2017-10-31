@@ -4,11 +4,10 @@
   </button>
   Витрина
 </mat-toolbar>
-
+<mat-progress-bar class="progress" *ngIf="loading$ | async" mode="indeterminate"></mat-progress-bar>
 <mat-sidenav-container class="sidenav">
   <mat-sidenav #sidenav mode="side" opened="true">
     <app-nav></app-nav>
   </mat-sidenav>
   <router-outlet></router-outlet>
 </mat-sidenav-container>
-

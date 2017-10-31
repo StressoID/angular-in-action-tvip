@@ -1,0 +1,12 @@
+<div class="goods-wrapper">
+  <ng-container *ngIf="goods?.length > 0; else notData">
+    <mat-card class="goods" *ngFor="let item of goods">
+      {{item.name}}
+    </mat-card>
+  </ng-container>
+  <ng-template #notData>
+    <mat-card>
+      Нет данных
+    </mat-card>
+  </ng-template>
+</div>

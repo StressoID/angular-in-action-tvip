@@ -1,19 +1,19 @@
-import { Component, ViewChild } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import 'rxjs/add/observable/of';
+import { HttpService } from './http.service';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
 })
-export class AppComponent {
-  public username: string;
-  @ViewChild('userName')
-  set userName(val) {
-    console.log(val);
+export class AppComponent implements OnInit {
+
+  public loading$;
+  constructor(private httpService: HttpService) {}
+
+  ngOnInit(): void {
+    this.loading$ = this.httpService.loading$;
   }
 
-  changes(event) {
-    console.log(event);
-  }
 }

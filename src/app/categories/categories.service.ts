@@ -8,7 +8,7 @@ export class CategoriesService {
   constructor(private httpService: HttpService) { }
 
   public getCategories() {
-    return this.httpService.get<Category[]>('/categories');
+    return this.httpService.get<Category[]>('categories');
   }
 
 }

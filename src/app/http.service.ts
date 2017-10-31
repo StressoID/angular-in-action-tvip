@@ -3,11 +3,12 @@ import { HttpClient, HttpEvent } from '@angular/common/http';
 import { Observable } from 'rxjs/Observable';
 import { BehaviorSubject } from 'rxjs/BehaviorSubject';
 import 'rxjs/add/operator/finally';
+import 'rxjs/add/operator/delay';
 
 @Injectable()
 export class HttpService {
 
-  private host = 'http://59f60c13ef6444001226f365.mockapi.io/';
+  private host = 'http://59f60c13ef6444001226f365.mockapi.io';
 
   public loading$: BehaviorSubject<boolean> = new BehaviorSubject(false);
 

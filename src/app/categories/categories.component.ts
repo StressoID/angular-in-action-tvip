@@ -12,8 +12,11 @@ export class CategoriesComponent implements OnInit {
   constructor(private categoriesService: CategoriesService) { }
 
   ngOnInit() {
-    this.data = this.categoriesService.getCategories();
-    this.data.subscribe(items => console.log(items));
+    this.categoriesService.getCategories().subscribe(result => this.data = result);
+  }
+
+  public getGoodLink(i) {
+    return `/categories/${i}`;
   }
 
 }

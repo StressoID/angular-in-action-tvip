@@ -6,7 +6,7 @@ import {
   MatIconModule,
   MatInputModule,
   MatListModule,
-  MatPaginatorModule,
+  MatPaginatorModule, MatProgressBarModule,
   MatSidenavModule,
   MatTableModule,
   MatToolbarModule,
@@ -24,6 +24,7 @@ import {
     MatListModule,
     MatTableModule,
     MatPaginatorModule,
+    MatProgressBarModule
   ],
   exports: [
     MatInputModule,
@@ -35,6 +36,7 @@ import {
     MatListModule,
     MatTableModule,
     MatPaginatorModule,
+    MatProgressBarModule
   ],
 })
 export class MatModule {

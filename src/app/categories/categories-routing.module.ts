@@ -4,7 +4,7 @@ import { CategoriesComponent } from './categories.component';
 
 const routes: Routes = [
   { path: '', component: CategoriesComponent },
-  { path: '/:id', component: CategoriesComponent },
+  { path: ':id', loadChildren: 'app/categories/goods/goods.module#GoodsModule', pathMatch: 'full' },
 ];
 
 @NgModule({
