@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { HttpService } from '../../../http.service';
 
 @Component({
   selector: 'app-categories',
@@ -7,9 +8,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CategoriesComponent implements OnInit {
 
-  constructor() { }
+  public data;
+  constructor(private httpService: HttpService) { }
 
   ngOnInit() {
+    this.data = this.httpService.get('/categories');
   }
 
 }

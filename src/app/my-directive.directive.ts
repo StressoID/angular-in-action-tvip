@@ -20,7 +20,7 @@ export class MyDirectiveDirective implements OnInit {
   }
 
   ngOnInit(): void {
-    // this.element.nativeElement.click();
+    this.element.nativeElement.click();
   }
 
   constructor(private element: ElementRef) {}

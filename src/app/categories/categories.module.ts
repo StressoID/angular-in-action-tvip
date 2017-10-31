@@ -4,6 +4,7 @@ import { CommonModule } from '@angular/common';
 import { CategoriesRoutingModule } from './categories-routing.module';
 import { GoodsModule } from './goods/goods.module';
 import { CategoriesComponent } from './categories.component';
+import { TestDirective } from './test.directive';
 
 @NgModule({
   imports: [
@@ -11,6 +12,6 @@ import { CategoriesComponent } from './categories.component';
     GoodsModule,
     CategoriesRoutingModule
   ],
-  declarations: [CategoriesComponent]
+  declarations: [CategoriesComponent, TestDirective]
 })
 export class CategoriesModule { }

@@ -7,6 +7,8 @@ import { SharedModule } from './shared/shared.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MyDirectiveDirective } from './my-directive.directive';
 import { FormsModule } from '@angular/forms';
+import { HttpService } from '../../http.service';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -17,9 +19,11 @@ import { FormsModule } from '@angular/forms';
     BrowserModule,
     BrowserAnimationsModule,
     FormsModule,
+    HttpClientModule,
     SharedModule,
     AppRoutingModule
   ],
+  providers: [ HttpService ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

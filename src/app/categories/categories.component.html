@@ -1,4 +1,15 @@
 <p>
   categories works!
 </p>
+<ul>
+  <li
+    appTest
+    *ngFor="let item of data | async; let i = index"
+    [tabindex]="0"
+    [index]="i">
+      {{item.name}}
+  </li>
+</ul>
+
+
 <router-outlet></router-outlet>
