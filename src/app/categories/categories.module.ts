@@ -13,7 +13,7 @@ import { CategoriesService } from './categories.service';
     SharedModule,
     CategoriesRoutingModule
   ],
-  declarations: [CategoriesComponent, TestDirective],
+  declarations: [CategoriesComponent],
   providers: [ CategoriesService ]
 })
 export class CategoriesModule { }

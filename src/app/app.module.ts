@@ -17,6 +17,7 @@ import { HttpService } from './http.service';
   ],
   imports: [
     BrowserModule,
+    FormsModule,
     BrowserAnimationsModule,
     FormsModule,
     HttpClientModule,

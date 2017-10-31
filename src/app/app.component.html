@@ -4,10 +4,26 @@
   </button>
   Витрина
 </mat-toolbar>
-<mat-progress-bar class="progress" *ngIf="loading$ | async" mode="indeterminate"></mat-progress-bar>
 <mat-sidenav-container class="sidenav">
   <mat-sidenav #sidenav mode="side" opened="true">
     <app-nav></app-nav>
   </mat-sidenav>
+
+  <mat-card>
+    <form #myForm="ngForm" (submit)="submitForm(myForm)" class="my-form" novalidate>
+      <mat-form-field>
+        <input required matInput placeholder="Имя" name="username" [(ngModel)]="user.username">
+      </mat-form-field>
+      <mat-form-field>
+        <input required matInput placeholder="Фамилия" name="surname" [(ngModel)]="user.surname">
+      </mat-form-field>
+      <mat-form-field>
+        <input required minlength="3" matInput placeholder="Возраст" name="age" [(ngModel)]="user.age">
+      </mat-form-field>
+      <button color="primary" mat-raised-button [disabled]="myForm.invalid">
+        Сохранить
+      </button>
+    </form>
+  </mat-card>
   <router-outlet></router-outlet>
 </mat-sidenav-container>

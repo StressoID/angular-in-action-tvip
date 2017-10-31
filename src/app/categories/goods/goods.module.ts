@@ -5,6 +5,7 @@ import { GoodsRoutingModule } from './goods-routing.module';
 import { GoodsComponent } from './goods.component';
 import { GoodsService } from './goods.service';
 import { SharedModule } from '../../shared/shared.module';
+import { TestDirective } from '../test.directive';
 
 @NgModule({
   imports: [
@@ -12,7 +13,7 @@ import { SharedModule } from '../../shared/shared.module';
     SharedModule,
     GoodsRoutingModule,
   ],
-  declarations: [GoodsComponent],
+  declarations: [GoodsComponent, TestDirective],
   providers: [ GoodsService ],
   exports: [GoodsComponent],
 })

@@ -1,18 +1,29 @@
-import { Directive, ElementRef, Input, Renderer2 } from '@angular/core';
-import { debug } from 'util';
+import { Directive, ElementRef, EventEmitter, Input, OnInit, Output, Renderer2, ViewChild } from '@angular/core';
 
 @Directive({
   selector: '[appTest]',
 })
-export class TestDirective {
+export class TestDirective implements OnInit {
 
-  @Input()
+
+  @Input('index')
   set index(i) {
-    if (i === 3) {
-      this.render.setAttribute(this.element.nativeElement, 'focus', 'on');
-    }
+      console.log(i);
+  }
+
+  @Output()
+  get myValue(): EventEmitter<any> {
+    return new EventEmitter();
   }
 
   constructor(private element: ElementRef, private render: Renderer2) { }
+
+  ngOnInit(): void {
+    this.test();
+  }
+
+  test() {
+    this.index.emit('test');
+  }
 
 }
