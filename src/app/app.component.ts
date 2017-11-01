@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import 'rxjs/add/observable/of';
-import { QuestionBase } from './shared/base.question';
+import { QuestionBase } from './shared/questions/base.question';
 import { DynamicFormService } from './shared/services/dynamic-form.service';
 
 @Component({
@@ -22,6 +22,18 @@ export class AppComponent {
       label: 'Surname',
       required: true,
       value: null
+    },
+    {
+      key: 'phone',
+      label: 'Phone',
+      required: false,
+      value: [
+        '7911123123',
+        '7911123124',
+        '7911123125',
+        '7911123126',
+      ],
+      controlType: 'array'
     },
   ];
   public questions: QuestionBase<any>[];
