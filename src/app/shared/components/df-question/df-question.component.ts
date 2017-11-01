@@ -12,8 +12,6 @@ export class DfQuestionComponent implements OnInit {
 
   ngOnInit(): void {
     if (this.question.controlType === 'array') {
-      console.log(this.form.controls[this.question.key]);
-      console.log(this.form.controls[this.question.key]['controls']);
     }
   }
 
@@ -22,7 +20,6 @@ export class DfQuestionComponent implements OnInit {
     for (const control of Object.keys(form.controls)) {
       array_controls.push(form.controls[control]);
     }
-    console.log(form.controls);
     return array_controls;
   }
 }
