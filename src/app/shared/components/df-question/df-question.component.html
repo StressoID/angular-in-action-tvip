@@ -1,0 +1,15 @@
+<div [formGroup]="form">
+  <div [ngSwitch]="question.controlType">
+    <mat-form-field>
+      <input
+        [placeholder]="question.label"
+        matInput
+        *ngSwitchCase="'text'"
+        [formControlName]="question.key"
+        [type]="question.type">
+      <mat-error *ngIf="form.controls[this.question.key].invalid">
+        {{question.label}} is required
+      </mat-error>
+    </mat-form-field>
+  </div>
+</div>

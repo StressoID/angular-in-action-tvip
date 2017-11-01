@@ -9,6 +9,7 @@ import { MyDirectiveDirective } from './my-directive.directive';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { HttpService } from './http.service';
+import { DynamicFormService } from './shared/services/dynamic-form.service';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,7 @@ import { HttpService } from './http.service';
     SharedModule,
     AppRoutingModule
   ],
-  providers: [ HttpService ],
+  providers: [ HttpService, DynamicFormService ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

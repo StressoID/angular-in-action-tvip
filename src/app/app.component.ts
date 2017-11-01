@@ -1,31 +1,33 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component } from '@angular/core';
 import 'rxjs/add/observable/of';
-import { HttpService } from './http.service';
-import { NgForm } from '@angular/forms';
+import { QuestionBase } from './shared/base.question';
+import { DynamicFormService } from './shared/services/dynamic-form.service';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
 })
-export class AppComponent implements OnInit {
+export class AppComponent {
 
-  public loading$;
-  public user: User = {} as User;
-  constructor(private httpService: HttpService) {}
+  public formJSONSchema = [
+    {
+      key: 'username',
+      label: 'Username',
+      required: true,
+      value: null
+    },
+    {
+      key: 'surname',
+      label: 'Surname',
+      required: true,
+      value: null
+    },
+  ];
+  public questions: QuestionBase<any>[];
 
-  ngOnInit(): void {
-    this.loading$ = this.httpService.loading$;
+  constructor(private dymanicFormService: DynamicFormService) {
+    this.questions = dymanicFormService.questionFactory(this.formJSONSchema);
   }
-
-  submitForm(form: NgForm) {
-    console.log(form);
-  }
-
 }
 
-interface User {
-  username: string;
-  surname: string;
-  age: number;
-}

@@ -1,0 +1,10 @@
+<div>
+  <form (ngSubmit)="submit()" [formGroup]="form">
+    <div *ngFor="let question of questions" class="form-row">
+      <app-df-question [question]="question" [form]="form"></app-df-question>
+    </div>
+    <div class="form-row">
+      <button mat-raised-button type="submit">Save</button>
+    </div>
+  </form>
+</div>
